@@ -98,11 +98,11 @@ tmux_set status-left-length 150
 
 # user@host
 if "$show_user" && "$show_host"; then
-    LS="#[fg=$G0,bg=$TC,bold] $user_icon $(whoami)@#h #[fg=$TC,bg=$G2,nobold]$rarrow"
+  LS="#[fg=$G0,bg=$TC,bold] $user_icon $(whoami)@$(pretty-hostname) #[fg=$TC,bg=$G2,nobold]$rarrow"
 elif "$show_user"; then
     LS="#[fg=$G0,bg=$TC,bold] $user_icon $(whoami) #[fg=$TC,bg=$G2,nobold]$rarrow"
 elif "$show_host"; then
-    LS="#[fg=$G0,bg=$TC,bold] #h #[fg=$TC,bg=$G2,nobold]$rarrow"
+  LS="#[fg=$G0,bg=$TC,bold] $(pretty-hostname) #[fg=$TC,bg=$G2,nobold]$rarrow"
 fi
 
 # session
